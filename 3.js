@@ -14,4 +14,24 @@
 число 32.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+const dayNumber = parseInt(inputVariable("Введите число в интервале [1, 32)"));
+
+if (dayNumber >= 1 && dayNumber < 32) {
+    console.log(`Число ${dayNumber} попадает в 
+    ${parseInt((dayNumber - 1) / 10) + 1} декаду месяца.`
+    );
+} else console.log("Неверное значение.");
+
+function inputVariable(data) {
+    while (true) {
+        let number = inputNumber(data);
+        if (!isNaN(number)) {
+            return +number;
+        }
+        console.log("Ошибка, введите число!");
+    }
+}
+
+function inputNumber(data) {
+    return prompt(data);
+}
